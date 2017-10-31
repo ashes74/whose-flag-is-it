@@ -2,6 +2,8 @@
 
 <link rel="import" href="../../bower_components/app-layout/app-layout.html">
 
+<link rel="import" href="../../bower_components/iron-image/iron-image.html">
+
 <dom-module id="whose-flag-app">
   <template>
     <style>
@@ -14,6 +16,12 @@
         <div main-title>Whose flag is this?</div>
       </app-toolbar>
     </app-header>
+    <div id="flag-image-container">
+      <iron-image 
+        id="flag-image"
+        preload fade src="data/svg/BR.svg">
+      </iron-image>
+    </div>
   </template>
 
   <script>
