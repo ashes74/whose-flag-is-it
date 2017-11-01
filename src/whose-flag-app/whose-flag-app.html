@@ -113,14 +113,20 @@
         };
       }
       _selectAnswer(event) {
-    let clickedButton = event.target;
-    this.userAnswer = clickedButton.textContent;
-    if (this.userAnswer == this.correctAnswer) {
-      this.outputMessage = `${this.userAnswer} is correct!`;
+      let clickedButton = event.target;
+      this.userAnswer = clickedButton.textContent;
+      if (this.userAnswer == this.correctAnswer) {
+        this.outputMessage = `${this.userAnswer} is correct!`;
+      }
+      else {
+        this.outputMessage = `Nope! The correct answer is ${this.correctAnswer}!`;
+      }
     }
-    else {
-      this.outputMessage = `Nope! The correct answer is ${this.correctAnswer}!`;
-    }
+    _handleResponse(event) {
+    this.countryList = event.detail.response.countrycodes;
+    this.countryA = this.countryList[0];
+    this.countryB = this.countryList[1];
+    this.correctAnswer = this.countryA;
   }
     }
 
