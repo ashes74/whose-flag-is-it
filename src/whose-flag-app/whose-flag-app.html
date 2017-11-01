@@ -70,8 +70,8 @@
         preload fade src="data/svg/BR.svg">
       </iron-image>
       <div id="answer-button-container">
-        <paper-button id="optionA" class="answer" on-click="_selectAnswer">{{countryA}}</paper-button>
-        <paper-button id="optionB" class="answer" on-click="_selectAnswer">{{countryB}}</paper-button>
+        <paper-button id="optionA" class="answer" on-click="_selectAnswer">{{countryA.name}}</paper-button>
+        <paper-button id="optionB" class="answer" on-click="_selectAnswer">{{countryB.name}}</paper-button>
       </div>
       <p>{{outputMessage}}</p>
       <paper-button class="another" id="another">Another!</paper-button> 
