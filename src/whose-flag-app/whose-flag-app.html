@@ -74,7 +74,7 @@
         <paper-button id="optionB" class="answer" on-click="_selectAnswer">{{countryB.name}}</paper-button>
       </div>
       <p>{{outputMessage}}</p>
-      <paper-button class="another" id="another">Another!</paper-button> 
+      <paper-button class="another" id="another" on-click="_restart">Another!</paper-button> 
     </div>
   </template>
 
@@ -129,6 +129,9 @@
       }
       __getRandomCountry() {
         return Math.floor(Math.random() * (this.countryList.length));
+      }
+      _restart() {
+        window.location.reload();
       }
     }
 
