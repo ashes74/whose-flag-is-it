@@ -67,7 +67,7 @@
     <div id="flag-image-container">
       <iron-image 
         id="flag-image"
-        preload fade src="data/svg/BR.svg">
+        preload fade src="data/svg/{{correctAnswer.code}}.svg">
       </iron-image>
       <div id="answer-button-container">
         <paper-button id="optionA" class="answer" on-click="_selectAnswer">{{countryA.name}}</paper-button>
@@ -88,24 +88,20 @@
       static get properties() {
         return {
           countryA: {
-            type: String,
-            value: "Brazil"
+            type: Object
           },
           countryB: {
-            type: String,
-            value: "Uruguay"
+            type: Object
           },
           outputMessage: {
               type: String,
-              value: ""
+              value:""
           },
           correctAnswer: {
-            type: String,
-            value: "Brazil"
+            type: Object
           },
           userAnswer: {
-            type: String,
-            value: "Brazil"
+            type: String
           },
           countryList: {
             type: Object
@@ -115,11 +111,11 @@
       _selectAnswer(event) {
       let clickedButton = event.target;
       this.userAnswer = clickedButton.textContent;
-      if (this.userAnswer == this.correctAnswer) {
+      if (this.userAnswer == this.correctAnswer.name) {
         this.outputMessage = `${this.userAnswer} is correct!`;
       }
       else {
-        this.outputMessage = `Nope! The correct answer is ${this.correctAnswer}!`;
+        this.outputMessage = `Nope! The correct answer is ${this.correctAnswer.name}!`;
       }
     }
     _handleResponse(event) {
