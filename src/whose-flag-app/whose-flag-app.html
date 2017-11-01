@@ -59,6 +59,11 @@
         <div main-title>Whose flag is this?</div>
       </app-toolbar>
     </app-header>
+    <iron-ajax
+    auto
+    url="data/countrycodes.json"
+    handle-as="json"
+    on-response="_handleResponse"></iron-ajax>
     <div id="flag-image-container">
       <iron-image 
         id="flag-image"
