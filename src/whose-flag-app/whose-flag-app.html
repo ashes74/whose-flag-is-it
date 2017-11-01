@@ -63,8 +63,8 @@
         preload fade src="data/svg/BR.svg">
       </iron-image>
       <div id="answer-button-container">
-        <paper-button id="optionA">{{countryA}}</paper-button>
-        <paper-button id="optionB">{{countryB}}</paper-button>
+        <paper-button id="optionA" class="answer" on-click="_selectAnswer">{{countryA}}</paper-button>
+        <paper-button id="optionB" class="answer" on-click="_selectAnswer">{{countryB}}</paper-button>
       </div>
       <p>{{outputMessage}}</p>
       <paper-button class="another" id="another">Another!</paper-button> 
@@ -102,6 +102,16 @@
           }
         };
       }
+      _selectAnswer(event) {
+    let clickedButton = event.target;
+    this.userAnswer = clickedButton.textContent;
+    if (this.userAnswer == this.correctAnswer) {
+      this.outputMessage = `${this.userAnswer} is correct!`;
+    }
+    else {
+      this.outputMessage = `Nope! The correct answer is ${this.correctAnswer} !`;
+    }
+  }
     }
 
     window.customElements.define(WhoseFlagApp.is, WhoseFlagApp);
