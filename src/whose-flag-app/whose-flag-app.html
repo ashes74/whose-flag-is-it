@@ -66,7 +66,7 @@
         <paper-button id="optionA">[[countryA]]</paper-button>
         <paper-button id="optionB">[[countryB]]</paper-button>
       </div>
-      <p>A message will go here, telling you if you got it right.</p>
+      <p>[[outputMessage]]</p>
       <paper-button class="another" id="another">Another!</paper-button> 
     </div>
   </template>
@@ -87,7 +87,11 @@
           countryB: {
             type: String,
             value: "Uruguay"
-          }
+          },
+          outputMessage: {
+              type: String,
+              value: ""
+            }
         };
       }
     }
