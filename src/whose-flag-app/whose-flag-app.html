@@ -63,10 +63,10 @@
         preload fade src="data/svg/BR.svg">
       </iron-image>
       <div id="answer-button-container">
-        <paper-button id="optionA">[[countryA]]</paper-button>
-        <paper-button id="optionB">[[countryB]]</paper-button>
+        <paper-button id="optionA">{{countryA}}</paper-button>
+        <paper-button id="optionB">{{countryB}}</paper-button>
       </div>
-      <p>[[outputMessage]]</p>
+      <p>{{outputMessage}}</p>
       <paper-button class="another" id="another">Another!</paper-button> 
     </div>
   </template>
@@ -92,14 +92,14 @@
               type: String,
               value: ""
           },
-            correctAnswer: {
-              type: String,
-              value: "Brazil"
-            },
-            userAnswer: {
-              type: String,
-              value: "Brazil"
-            }
+          correctAnswer: {
+            type: String,
+            value: "Brazil"
+          },
+          userAnswer: {
+            type: String,
+            value: "Brazil"
+          }
         };
       }
     }
